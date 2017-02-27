@@ -10,7 +10,7 @@ After training, run:
 
 [sample.py](https://github.com/memo/char-rnn-tensorflow/blob/master/sample.py) with the `--freeze_graph` argument to prune, freeze and save the graph as a binary protobuf to be loaded in C++ (removing unnessecary nodes used in training, and replacing variables with consts).
 
-[sample_frozen.py](https://github.com/memo/char-rnn-tensorflow/blob/master/test_frozen.py) demonstrates inference with the frozen graph from python. It also works in [C++/openFrameworks](https://github.com/memo/ofxMSATensorFlow).
+[sample_frozen.py](https://github.com/memo/char-rnn-tensorflow/blob/master/test_frozen.py) demonstrates inference with the frozen graph from python. It also works in [C++/openFrameworks](https://github.com/memo/ofxMSATensorFlow/blob/master/example-handwriting-rnn/src/example-handwriting-rnn.cpp).
 
 ----
 
