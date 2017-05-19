@@ -1,10 +1,4 @@
-This is a fork of https://github.com/hardmaru/write-rnn-tensorflow modified so the trained models can easily be used in other environments (e.g. C++, [openFrameworks](http://openframeworks.cc/), [ofxMSATensorFlow](https://github.com/memo/ofxMSATensorFlow) etc.)
-
-General problems and motivations for the mods:
-
-* The default format that trained tensorflow models are saved in are checkpoint files, which don't contain architecture information, only parameter values, so loading them alone in C++ wouldn't be enough (AFAIK there is no C++ loader for ckpt files anyway).
-* The file format which contains architecture information and can be loaded in C++ is protobuf (.pb), however saving a .pb from tensorflow saves the *untrained* model only, i.e. the trained model parameters are *not* saved in this file. There is a [utility](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py) which prunes and 'freezes' graphs (replaces variables with consts of the same value), however...
-* ... when we use *loaded* graphs, we need to access ops to feed and fetch by name. Most python tensorflow examples however, build the graph in python, save references to ops in variables, then during inference they access ops to feed and fetch via those variables, so the graphs often aren't setup to be easily accessible by name. 
+This is a fork of https://github.com/hardmaru/write-rnn-tensorflow modified so the trained models can easily be used in other environments (e.g. C++, [openFrameworks](http://openframeworks.cc/), [ofxMSATensorFlow](https://github.com/memo/ofxMSATensorFlow) etc). See [here](https://github.com/memo/ofxMSATensorFlow/wiki/Loading-and-using-trained-tensorflow-models-in-openFrameworks) for motivations for these mods.
 
 After training, run:
 
